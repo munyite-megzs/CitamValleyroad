@@ -183,10 +183,19 @@
     <Compile Include="Migrations\201905062130127_Inital Model.Designer.cs">
       <DependentUpon>201905062130127_Inital Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905071120191_CreateChoirMemberTable.cs" />
+    <Compile Include="Migrations\201905071120191_CreateChoirMemberTable.Designer.cs">
+      <DependentUpon>201905071120191_CreateChoirMemberTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905071137497_PopulateOccupationsTable.cs" />
+    <Compile Include="Migrations\201905071137497_PopulateOccupationsTable.Designer.cs">
+      <DependentUpon>201905071137497_PopulateOccupationsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Occupation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -268,6 +277,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905062130127_Inital Model.resx">
       <DependentUpon>201905062130127_Inital Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905071120191_CreateChoirMemberTable.resx">
+      <DependentUpon>201905071120191_CreateChoirMemberTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905071137497_PopulateOccupationsTable.resx">
+      <DependentUpon>201905071137497_PopulateOccupationsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
