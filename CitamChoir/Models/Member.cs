@@ -32,6 +32,9 @@ namespace CitamChoir.Models
         [Required]
         [StringLength(20)]
         public string Phone { get; set; }
+        [Required]
+        [StringLength(50)]
+        public Voice Voice { get; set; }
         public DateTime InductionDate { get; set; }
 
         public bool BGV { get; set; } = false; 

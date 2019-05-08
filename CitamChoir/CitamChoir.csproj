@@ -196,6 +196,18 @@
     <Compile Include="Migrations\201905081254287_CreateVoicesTable.Designer.cs">
       <DependentUpon>201905081254287_CreateVoicesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905081306588_PopulateVoicesTable.cs" />
+    <Compile Include="Migrations\201905081306588_PopulateVoicesTable.Designer.cs">
+      <DependentUpon>201905081306588_PopulateVoicesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905081318532_CreateChoirMemberTable1.cs" />
+    <Compile Include="Migrations\201905081318532_CreateChoirMemberTable1.Designer.cs">
+      <DependentUpon>201905081318532_CreateChoirMemberTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905081324025_OverrideConventionsForMembers.cs" />
+    <Compile Include="Migrations\201905081324025_OverrideConventionsForMembers.Designer.cs">
+      <DependentUpon>201905081324025_OverrideConventionsForMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -294,6 +306,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905081254287_CreateVoicesTable.resx">
       <DependentUpon>201905081254287_CreateVoicesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081306588_PopulateVoicesTable.resx">
+      <DependentUpon>201905081306588_PopulateVoicesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081318532_CreateChoirMemberTable1.resx">
+      <DependentUpon>201905081318532_CreateChoirMemberTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081324025_OverrideConventionsForMembers.resx">
+      <DependentUpon>201905081324025_OverrideConventionsForMembers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
