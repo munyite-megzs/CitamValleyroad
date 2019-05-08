@@ -1,0 +1,101 @@
+﻿@model CitamChoir.ViewModel.MembersFormViewModel
+@{
+                /**/
+
+                ViewBag.Title = "Create";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add A New Member</h2>
+
+@using (Html.BeginForm("Create", "Gigs"))
+{
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.OtherNames)
+            @Html.TextBoxFor(m => m.OtherNames, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Gender)
+            @Html.DropDownListFor(m => m.Gender ,new SelectList(new List<SelectListItem> {
+            new SelectListItem { Text = "Male", Value = "1"},
+            new SelectListItem { Text = "Female", Value = "0"}
+            }, "Value", "Text"),
+            "Select Gender",
+            new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+
+            @Html.LabelFor(m => m.Occupation)
+            @Html.DropDownListFor(m => m.Occupation, new SelectList(Model.Occupations, "Id", "Name"), "Select Occupation", new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone)
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.InductionDate)
+            @Html.TextBoxFor(m => m.InductionDate, new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.BGV)
+            @Html.CheckBoxFor(m => m.BGV, new { @class = "form-control" })
+
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.WorshipLeader)
+            @Html.CheckBoxFor(m => m.WorshipLeader, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Leader)
+            @Html.CheckBoxFor(m => m.Leader, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">SAVE</button>
+
+}
+
+
+
