@@ -1,14 +1,14 @@
 ﻿@model CitamChoir.ViewModel.MembersFormViewModel
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Create";
-                Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Add A New Member</h2>
 
-@using (Html.BeginForm("Create", "Gigs"))
+@using (Html.BeginForm("Create", "Member"))
 {
     <div>
         <div class="form-group">
@@ -71,6 +71,17 @@
         </div>
     </div>
 
+
+    <div>
+        <div class="form-group">
+
+            @Html.LabelFor(m => m.Voice)
+            @Html.DropDownListFor(m => m.Voice, new SelectList(Model.Voices, "Id", "Name"), "Select Voice", new { @class = "form-control" })
+
+        </div>
+    </div>
+
+
     <div>
         <div class="form-group">
             @Html.LabelFor(m => m.BGV)
@@ -89,7 +100,8 @@
     <div>
         <div class="form-group">
             @Html.LabelFor(m => m.Leader)
-            @Html.CheckBoxFor(m => m.Leader, new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.Leader, new SelectList(Model.Leaders, "Id", "Name"), "Select Role", new { @class = "form-control" })
+          
         </div>
     </div>
 

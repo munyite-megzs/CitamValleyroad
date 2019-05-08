@@ -208,9 +208,26 @@
     <Compile Include="Migrations\201905081324025_OverrideConventionsForMembers.Designer.cs">
       <DependentUpon>201905081324025_OverrideConventionsForMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905081428478_CreateLeadersTable.cs" />
+    <Compile Include="Migrations\201905081428478_CreateLeadersTable.Designer.cs">
+      <DependentUpon>201905081428478_CreateLeadersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905081430019_PopulateLeadersTable.cs" />
+    <Compile Include="Migrations\201905081430019_PopulateLeadersTable.Designer.cs">
+      <DependentUpon>201905081430019_PopulateLeadersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905081444264_OverrideConventionsForMembers1.cs" />
+    <Compile Include="Migrations\201905081444264_OverrideConventionsForMembers1.Designer.cs">
+      <DependentUpon>201905081444264_OverrideConventionsForMembers1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905082102057_AddForeignKeyPropertiesToMember.cs" />
+    <Compile Include="Migrations\201905082102057_AddForeignKeyPropertiesToMember.Designer.cs">
+      <DependentUpon>201905082102057_AddForeignKeyPropertiesToMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Leader.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -315,6 +332,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905081324025_OverrideConventionsForMembers.resx">
       <DependentUpon>201905081324025_OverrideConventionsForMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081428478_CreateLeadersTable.resx">
+      <DependentUpon>201905081428478_CreateLeadersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081430019_PopulateLeadersTable.resx">
+      <DependentUpon>201905081430019_PopulateLeadersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081444264_OverrideConventionsForMembers1.resx">
+      <DependentUpon>201905081444264_OverrideConventionsForMembers1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905082102057_AddForeignKeyPropertiesToMember.resx">
+      <DependentUpon>201905082102057_AddForeignKeyPropertiesToMember.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
