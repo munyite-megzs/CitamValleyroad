@@ -1,4 +1,5 @@
 ﻿using CitamChoir.Models;
+using System;
 using System.Collections.Generic;
 
 namespace CitamChoir.ViewModel
@@ -19,5 +20,20 @@ namespace CitamChoir.ViewModel
         public bool WorshipLeader { get; set; }
         public byte Leader { get; set; }
         public IEnumerable<Leader> Leaders { get; set; }
+        public DateTime DateTime
+        {
+           get
+            {
+                return DateTime.Parse(InductionDate);
+            }
+        }
+
+        public string FialGender
+        {
+            get
+            {
+                return Gender == "0" ? "Female" : "Male";
+            }
+        }
     }
 }
