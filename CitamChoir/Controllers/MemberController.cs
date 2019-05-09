@@ -21,6 +21,7 @@ namespace CitamChoir.Controllers
         // GET: Member
         public ActionResult Create()
         {
+         
             var viewModel = new MembersFormViewModel {
                 Occupations = _context.Occupations.ToList(),
                 Voices = _context.Voices.ToList(),
@@ -32,10 +33,17 @@ namespace CitamChoir.Controllers
         }
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(MembersFormViewModel viewModel)
         {
-          
-           
+
+            if (!ModelState.IsValid)
+            {
+                viewModel.Occupations = _context.Occupations.ToList();
+                viewModel.Voices = _context.Voices.ToList();
+                viewModel.Leaders = _context.Leaders.ToList();
+                return View("Create",viewModel);
+            }
 
             var member = new Member
             {
@@ -46,7 +54,7 @@ namespace CitamChoir.Controllers
                 OccupationId = viewModel.Occupation,
                 Email = viewModel.Email,
                 Phone = viewModel.Phone,
-                InductionDate = viewModel.DateTime,
+                InductionDate = viewModel.GetDateTime(),
                 BGV = viewModel.BGV,
                 WorshipLeader = viewModel.WorshipLeader,
                 LeaderId = viewModel.Leader,
