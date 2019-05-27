@@ -1,16 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CitamChoir.Models;
+using PagedList;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-
 namespace CitamChoir.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private ApplicationDbContext _context;
+
+        public HomeController()
         {
-            return View();
+            _context = new ApplicationDbContext();
+        }
+
+        public ActionResult Index(int? page)
+        {
+            var allMembers = _context.Members
+                .Include(g => g.Leader).ToList().
+                ToPagedList(page ?? 1,10);
+                
+            return View(allMembers);
         }
 
         public ActionResult About()

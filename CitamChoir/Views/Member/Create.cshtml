@@ -7,123 +7,141 @@
 }
 
 <h2>Add A New Member</h2>
-
+<p class="alert alert-info" >All fields are <strong>required</strong>!</p>
 @using (Html.BeginForm("Create", "Member"))
 {
     @Html.AntiForgeryToken()
     <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.FirstName)
-            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.FirstName)
+        <div class="form-group"> 
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", autofocus = "auto" })
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+            
 
         </div>
     </div>
 
     <div>
         <div class="form-group">
-            @Html.LabelFor(m => m.OtherNames)
-            @Html.TextBoxFor(m => m.OtherNames, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.OtherNames)
+            
+                @Html.LabelFor(m => m.OtherNames)
+                @Html.TextBoxFor(m => m.OtherNames, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.OtherNames)
+            
         </div>
-    </div>
-
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Gender)
-            @Html.DropDownListFor(m => m.Gender ,new SelectList(new List<SelectListItem> {
-            new SelectListItem { Text = "Male", Value = "1"},
-            new SelectListItem { Text = "Female", Value = "0"}
-            }, "Value", "Text"),
-            "Select Gender",
-            new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Gender)
-
+            
         </div>
-    </div>
 
-    <div>
-        <div class="form-group">
+        <div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(m => m.Gender)
+                    @Html.DropDownListFor(m => m.Gender ,new SelectList(new List<SelectListItem> {
+                    new SelectListItem { Text = "Male", Value = "1"},
+                    new SelectListItem { Text = "Female", Value = "0"}
+                    }, "Value", "Text"),
+                    "Select Gender",
+                    new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Gender)
+                </div>
+                  
 
-            @Html.LabelFor(m => m.Occupation)
-            @Html.DropDownListFor(m => m.Occupation, new SelectList(Model.Occupations, "Id", "Name"), "Select Occupation", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Occupation)
+                </div>
+            </div>
 
+        <div>
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.Occupation)
+                @Html.DropDownListFor(m => m.Occupation, new SelectList(Model.Occupations, "Id", "Name"), "Select Occupation", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Occupation)
+
+            </div>
         </div>
-    </div>
 
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Email)
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Email)
+        <div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+                   
 
+                </div>
+            </div>
+
+        <div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Phone)
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Phone)
+
+            </div>
         </div>
-    </div>
 
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Phone)
-            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Phone)
+        <div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(m => m.InductionDate)
+                    @Html.TextBoxFor(m => m.InductionDate, new { @class = "form-control" , placeholder = "eg 1 Jan 2015" })
+                    @Html.ValidationMessageFor(m => m.InductionDate)
+                </div>
+                    
 
+                </div>
+            </div>
+
+
+        <div>
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.Voice)
+                @Html.DropDownListFor(m => m.Voice, new SelectList(Model.Voices, "Id", "Name"), "Select Voice", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Voice)
+
+            </div>
         </div>
-    </div>
 
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.InductionDate)
-            @Html.TextBoxFor(m => m.InductionDate, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.InductionDate)
 
+        <div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(m => m.BGV)
+                    @Html.CheckBoxFor(m => m.BGV, new { @class = "form-control" })
+                </div>
+                    
+
+
+                </div>
+            </div>
+
+        <div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.WorshipLeader)
+                @Html.CheckBoxFor(m => m.WorshipLeader, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
 
+        <div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Leader)
+                @Html.DropDownListFor(m => m.Leader, new SelectList(Model.Leaders, "Id", "Name"), "Select Role", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Leader)
 
-    <div>
-        <div class="form-group">
-
-            @Html.LabelFor(m => m.Voice)
-            @Html.DropDownListFor(m => m.Voice, new SelectList(Model.Voices, "Id", "Name"), "Select Voice", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Voice)
-
+            </div>
         </div>
-    </div>
 
+        <button type="submit" class="btn btn-primary">SAVE</button>
 
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.BGV)
-            @Html.CheckBoxFor(m => m.BGV, new { @class = "form-control" })
+        }
 
-
-        </div>
-    </div>
-
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.WorshipLeader)
-            @Html.CheckBoxFor(m => m.WorshipLeader, new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Leader)
-            @Html.DropDownListFor(m => m.Leader, new SelectList(Model.Leaders, "Id", "Name"), "Select Role", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Leader)
-
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary">SAVE</button>
-
-}
-
-@section scripts
+        @section scripts
 {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            @Scripts.Render("~/bundles/jqueryval")
+        }
 
 
 

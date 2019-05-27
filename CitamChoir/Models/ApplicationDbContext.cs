@@ -10,6 +10,7 @@ namespace CitamChoir.Models
         public DbSet<Occupation> Occupations { get; set; }
         public DbSet<Voice> Voices { get; set; }
         public DbSet<Leader> Leaders { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -1,31 +1,138 @@
-﻿@{
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<CitamChoir.Models.Member>
+@{
     ViewBag.Title = "Home Page";
 }
+<div class="container">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="row ">
+
+        <div class="col-sm-2 total-members">
+            <p class="">TotalMembers</p>
+            <div class="member-summary">
+                <p>150</p>
+            </div>
+        </div>
+       
+
+        <div class="col-sm-2 total-sopranos">
+            <p>Sopranos</p>
+            <div class="member-summary">
+                <p>50</p>
+            </div>
+        </div>
+       
+
+        <div class="col-sm-2 total-altos">
+            <p>Altor</p>
+            <div class="member-summary">
+                <p>40</p>
+            </div>
+        </div>
+      
+
+        <div class="col-sm-2 total-tenor">
+            <p>Tenor</p>
+            <div class="member-summary">
+                <p>20</p>
+            </div>
+        </div>
+       
+
+        <div class="col-sm-2 total-bass">
+            <p>Bass</p>
+            <div class="member-summary">
+                <p>5</p>
+            </div>
+        </div>
+       
+
+        <div class="col-sm-2 total-band">
+            <p>band</p>
+            <div class="member-summary">
+                <p>10</p>
+
+            </div>
+        </div>
+        
+
+
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<div>
+    <table class="table table-hover" ">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().OtherNames)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Voice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().BGV)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().WorshipLeader)
+                </th>
+
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var memberData in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.OtherNames)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.Voice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.BGV)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @memberData.WorshipLeader)
+                    </td>
+
+
+                    @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>*@
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 </div>
+
+
