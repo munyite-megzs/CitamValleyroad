@@ -1,5 +1,6 @@
 ﻿using CitamChoir.Models;
 using PagedList;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -16,12 +17,45 @@ namespace CitamChoir.Controllers
 
         public ActionResult Index(int? page)
         {
+
+
+
+
+            var members = _context.Members.Include(g => g.Voice).ToList().Count();
+            var sopranos = _context.Members.Include(g => g.VoiceId).Where(a => a.VoiceId == 3).Count();
+            var altos = _context.Members.Include(g => g.VoiceId).Where(a => a.VoiceId == 2).Count();
+            var tenors = _context.Members.Include(g => g.VoiceId).Where(a => a.VoiceId == 4).Count();
+            var bass = _context.Members.Include(g => g.VoiceId).Where(a => a.VoiceId == 1).Count();
+            var band = _context.Members.Include(g => g.VoiceId).Where(a => a.VoiceId == 5).Count();
+
+            //ViewBag.TotalStudents = studentList.Count();
+            ViewBag.TotalMembers = members;
+            ViewBag.TotalSopranos = sopranos;
+            ViewBag.TotalAltos = altos;
+            ViewBag.TotalTenors = tenors;
+            ViewBag.TotalBass = bass;
+            ViewBag.TotalBand = band;
+
+
+
             var allMembers = _context.Members
-                .Include(g => g.Leader).ToList().
-                ToPagedList(page ?? 1,10);
-                
+               .Include(g => g.Voice)
+            
+               .ToList().
+               ToPagedList(page ?? 1, 10);
+
             return View(allMembers);
+
+
+
         }
+
+        private string GetStatus()
+        {
+            throw new NotImplementedException();
+        }
+
+       
 
         public ActionResult About()
         {

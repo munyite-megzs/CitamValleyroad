@@ -15,6 +15,8 @@ namespace CitamChoir.Controllers
             _context = new ApplicationDbContext();
         }
 
+       
+
         [HttpPost]
         public IHttpActionResult Attend([FromBody] AttendanceForCreationDto attendanceForCreation)
         {

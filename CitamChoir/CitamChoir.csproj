@@ -642,6 +642,7 @@
     <Compile Include="ViewModel\FutureDate.cs" />
     <Compile Include="ViewModel\FutureTime.cs" />
     <Compile Include="ViewModel\MembersFormViewModel.cs" />
+    <Compile Include="ViewModel\SummaryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -702,6 +703,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Member\Create.cshtml" />
     <Content Include="Views\Member\Createrr.cshtml" />
+    <Content Include="Views\Home\Index23.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

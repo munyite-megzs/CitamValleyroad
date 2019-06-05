@@ -1,61 +1,68 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
 @model PagedList.IPagedList<CitamChoir.Models.Member>
+
+
 @{
     ViewBag.Title = "Home Page";
+  
+
 }
 <div class="container">
+
+
 
     <div class="row ">
 
         <div class="col-sm-2 total-members">
             <p class="">TotalMembers</p>
             <div class="member-summary">
-                <p>150</p>
+                <p>@ViewBag.TotalMembers</p>
+
             </div>
         </div>
-       
+
 
         <div class="col-sm-2 total-sopranos">
             <p>Sopranos</p>
             <div class="member-summary">
-                <p>50</p>
+                <p>@ViewBag.TotalSopranos</p>
             </div>
         </div>
-       
+
 
         <div class="col-sm-2 total-altos">
             <p>Altor</p>
             <div class="member-summary">
-                <p>40</p>
+                <p> @ViewBag.TotalAltos</p>
             </div>
         </div>
-      
+
 
         <div class="col-sm-2 total-tenor">
             <p>Tenor</p>
             <div class="member-summary">
-                <p>20</p>
+                <p>@ViewBag.TotalTenors</p>
             </div>
         </div>
-       
+
 
         <div class="col-sm-2 total-bass">
             <p>Bass</p>
             <div class="member-summary">
-                <p>5</p>
+                <p> @ViewBag.TotalBass</p>
             </div>
         </div>
-       
+
 
         <div class="col-sm-2 total-band">
             <p>band</p>
             <div class="member-summary">
-                <p>10</p>
+                <p> @ViewBag.TotalBand</p>
 
             </div>
         </div>
-        
+
 
 
     </div>
@@ -67,11 +74,13 @@
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.First().FirstName)
+
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.First().OtherNames)
                 </th>
                 <th>
+
                     @Html.DisplayNameFor(model => model.First().Voice)
                 </th>
                 <th>
@@ -97,14 +106,15 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => @memberData.FirstName)
+                        @Html.DisplayFor(modelItem => @memberData.FirstName) 
+                        
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => @memberData.OtherNames)
                     </td>
 
                     <td>
-                        @Html.DisplayFor(modelItem => @memberData.Voice)
+                        @Html.DisplayFor(modelItem => @memberData.Voice.Name)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => @memberData.Email)
